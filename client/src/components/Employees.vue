@@ -99,13 +99,10 @@ export default {
     ...mapActions('employee', ['getAllEmployees']),
 
     handleSubmit () {
-      console.log('submit')
       if (this.isNewEntry) {
-        console.log('submitted')
         this.$store.dispatch('employee/create', this.employee).then(result => {
           this.employees.push(result)
           this.$root.$emit('hideAddEmployeeModal', true)
-          console.log('ADD THIS', result)
         /**
          * TODO:
          * - Show an success alert notification after creation of project.
@@ -114,7 +111,6 @@ export default {
         })
         window.location.reload()
       } else {
-        console.log('updateCurrentEmployee()')
         this.$store.dispatch('employee/updateEmployeeById', { id: this.employeeId, employee: this.employee }).then(result => {
           this.$root.$emit('hideAddEmployeeModal', true)
         })

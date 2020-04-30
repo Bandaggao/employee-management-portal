@@ -34,6 +34,14 @@
       </template>
      </b-table>
       </b-row>
+      <p
+        v-if="employees.length === 0"
+        class="d-flex flex-column align-items-center justify-content-center mt-5"
+        style="font-size:30px;color:#61DAE0; font-weight:bold;"
+      >
+        <span class="fa fa-flushed" style="color:#61DAE0;font-size:35px;transform:rotate(23deg)"></span>
+        No data is available.
+      </p>
     </b-container>
     </div>
   </div>
